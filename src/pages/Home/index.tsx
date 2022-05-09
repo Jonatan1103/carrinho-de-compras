@@ -54,11 +54,11 @@ const Home = (): JSX.Element => {
 
   return (
     <ProductList>
-      {cart.map(product => (
+      {products.map(product => (
         <li key={product.id}>
           <img src={product.image} alt={product.title}/>
           <strong>{product.title}</strong>
-          <span>{product.price}</span>
+          <span>{product.priceFormatted}</span>
           <button
             type="button"
             data-testid="add-product-button"
@@ -66,7 +66,7 @@ const Home = (): JSX.Element => {
           >
             <div data-testid="cart-product-quantity">
             <MdAddShoppingCart size={16} color="#FFF" />
-            {cartItemsAmount[product.id] || 0} 2
+            {cartItemsAmount[product.id] || 0}
             </div>
 
             <span>ADICIONAR AO CARRINHO</span>
